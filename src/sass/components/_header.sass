@@ -1,2 +1,46 @@
 .header
-  border: 1px solid red
+  padding: 2rem
+  background-image: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%)
+  &__content-well
+    @include content-well
+    display: flex
+    align-items: center
+    justify-content: space-between
+  &__branding
+    @include title ($size: 2rem, $color: white)
+  &__nav
+    a
+      @include body ($size: 1.5rem, $color: white)
+      margin-right: 1rem
+      &:last-of-type
+        margin-right: 0
+    @media screen and (max-width: 30rem)
+      display: none
+  &__menu
+    display: none
+    position: absolute
+    &--active
+      animation: fade-in 400ms ease
+      display: flex
+      visibility: visible
+      justify-content: space-around
+      align-items: center
+      position: absolute
+      top: 0
+      left: 0
+      height: 100%
+      width: 100%
+      background-color: transparentize(black, .2)
+      text-align: center
+      nav a
+        @include body (1.5rem, white)
+        display: block
+        margin-bottom: 2rem
+        &:last-of-type
+          margin-bottom: 0
+
+@keyframes fade-in
+  from
+    opacity: 0
+  to
+    opacity: 1

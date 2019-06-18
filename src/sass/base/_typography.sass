@@ -1,0 +1,19 @@
+// Google Font - Nunito Sans //
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans:400,700&display=swap')
+
+$font-stack: "Nunito Sans", sans-serif
+
+@mixin title ($size: 2rem, $color: inherit)
+  font-family: $font-stack
+  font-size: $size
+  font-weight: 700
+  color: $color
+
+@mixin body ($size: 1rem, $color: inherit)
+  font-family: $font-stack
+  font-size: $size
+  font-weight: 400
+  color: $color
+
+body
+  font-family: $font-stack
