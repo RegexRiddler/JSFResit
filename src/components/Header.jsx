@@ -10,7 +10,6 @@ import "../sass/main.sass"
 
 export default function Header () {
   const [isMenuToggled, setMenuToggled] = useState(false)
-  console.log(isMenuToggled);
 
   const toggleMenu = () => {
     setMenuToggled(!isMenuToggled)
