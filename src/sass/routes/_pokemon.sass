@@ -1,0 +1,33 @@
+.content-well
+  display: flex
+  justify-content: center
+  padding: 1rem
+
+.pokemon-container
+  display: flex
+  justify-items: flex-start
+  justify-content: center
+  flex-flow: row wrap
+  border-radius: .5rem
+  &__image-container
+    display: inline
+    margin: 0 1rem 1rem 1rem
+    img
+      border-radius: .5rem
+      height: auto
+      max-width: 15rem
+      z-index: 20
+      box-shadow: 0rem .4rem .6rem transparentize(black, .8)
+  &__details
+    display: inline-block
+    height: fit-content
+    max-width: 18rem
+    padding: .5rem
+    border-radius: .5rem
+    background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+    .pokemon-container__card-details
+      background-color: white
+      border-radius: .3rem
+      padding: 1rem
+      h1
+        @include title
