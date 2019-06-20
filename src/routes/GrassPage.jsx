@@ -20,9 +20,9 @@ export default function GrassPage () {
   }, []);
 
   return (
-    <main className="home">
+    <main className="grass">
       <SearchBar/>
-      <div className="home__cards">
+      <div className="grass__cards">
         {pokemonCards.map((item, key) => 
           <Card key={key} Id={item.id} Name={item.name} ImageUrl={item.imageUrl} CardDetails={item} />
         )}
