@@ -6,9 +6,6 @@ import axios from "axios"
 import SearchBar from "../components/SearchBar"
 import Card from "../components/Card"
 
-// Stylesheet //
-import "../sass/routes/_home.sass"
-
 export default function HomePage () {
   const [pokemonCards, setPokemonCards] = useState([])
 
