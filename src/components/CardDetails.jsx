@@ -3,7 +3,7 @@ import React from "react"
 
 export default function CardDetails (props) {
   const details = props.PokemonDetails
-  
+
   return (
     <section className="card-details">
       {details.artist ? 
