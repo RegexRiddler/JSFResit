@@ -8,18 +8,26 @@ import Card from "../components/Card"
 
 export default function HomePage () {
   const [pokemonCards, setPokemonCards] = useState([])
+  const [searchArray, setSearchArray] = useState([])
 
   useEffect(() => {
     axios
     .get("https://api.pokemontcg.io/v1/cards?setCode=base1")
-    .then(result => setPokemonCards(result.data.cards))
+    .then(result => {
+      setPokemonCards(result.data.cards);
+      setSearchArray(result.data.cards);
+    })
   }, []);
+
+  const handleSearch = (searchTerm) => {
+    setSearchArray(pokemonCards.filter(item => item.name.toLowerCase().includes(searchTerm.toLowerCase())))
+  }
 
   return (
     <main className="home">
-      <SearchBar/>
+      <SearchBar searchTerm={handleSearch} />
       <div className="home__cards">
-        {pokemonCards.map((item, key) => 
+        {searchArray.map((item, key) => 
           <Card key={key} Id={item.id} Name={item.name} ImageUrl={item.imageUrl} CardDetails={item} />
         )}
       </div>
